@@ -1,6 +1,8 @@
-# Dog Dating Site (PUG ME)
-##Made by **[ThemisVasilakos](https://github.com/ThemisVasilakos)** and **[MikeTsak](https://github.com/MikeTsak)**
-Made as a University Project
+# Dog Dating Site (PUG ME)\
+
+##Made by **[ThemisVasilakos](https://github.com/ThemisVasilakos)** and **[MikeTsak](https://github.com/MikeTsak)**.\
+
+Made for University Project
 
 >Welcome to **PUG ME** the best dog dating site in the web, using React (front) and Java(Back)
 
