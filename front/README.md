@@ -4,7 +4,6 @@
 
 ![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/front/src/components/img/pugmelogopng.png)
 
-[University Page](http://www.ice.uniwa.gr/)
 
 ## Available Scripts
 
@@ -21,6 +20,10 @@ You may also see any lint errors in the console.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+
+###### More Info
+
+[University Page](http://www.ice.uniwa.gr/)
 
 App Color Palete: `#4c4345` , `#dc80b1` , `#ecdfd6` , `#886962`
 
