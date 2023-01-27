@@ -23,8 +23,8 @@ Builds the app for production to the `build` folder.\
 
 ###### More Info
 
-[University Page](http://www.ice.uniwa.gr/)
+>[University Page](http://www.ice.uniwa.gr/)
 
-App Color Palete: `#4c4345` , `#dc80b1` , `#ecdfd6` , `#886962`
+>App Color Palete: `#4c4345` , `#dc80b1` , `#ecdfd6` , `#886962`
 
 
