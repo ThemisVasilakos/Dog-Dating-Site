@@ -1,6 +1,6 @@
-# Dog Dating Site (PUG ME)\
+# Dog Dating Site (PUG ME)
 
-##Made by **[ThemisVasilakos](https://github.com/ThemisVasilakos)** and **[MikeTsak](https://github.com/MikeTsak)**.\
+## Made by **[ThemisVasilakos](https://github.com/ThemisVasilakos)** and **[MikeTsak](https://github.com/MikeTsak)**
 
 Made for University Project
 
