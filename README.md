@@ -4,7 +4,7 @@
 
 Made for a University Project
 
->Welcome to **PUG ME** the best dog dating site in the web, using React (front) and Java(Back)
+>Welcome to **PUG ME** the best dog dating site in the web, using React (for the Front End) and Java (for the Back)
 
 ![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/front/src/components/img/pugmelogopng.png)
 
