@@ -1,0 +1,591 @@
+/*Mike Tsak 19/9/22*/
+
+body{
+  height: 100%;
+  background: linear-gradient(0deg, #6e3d54, #442634, #1e0f14);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Quicksand-SemiBold', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+padding: 10px 16px;
+background: #6e3d54;
+opacity: 0.9;
+color: #f1f1f1;
+font-size: x-large;
+text-align: center;
+-webkit-text-stroke: #dc80b1;
+}
+
+.dogname {
+font-size: 500px bold;
+color: #4c4345;
+text-align: center;
+}
+
+/* Page content */
+.content {
+padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+position: fixed;
+top: 0;
+width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+padding-top: 102px;
+}
+
+section {
+float: left;
+margin: 0 1.5%;
+width: 63%;
+}
+aside {
+float: right;
+margin: 0 1.5%;
+width: 30%;
+}
+
+h1.title {
+display: flex;
+justify-content: center;
+font-weight: 700;
+line-height: 1.5;
+width: fit-content;
+margin: auto;
+padding: 4px;
+background-color: whitesmoke;
+border-radius: 10px 15px 10px 15px;
+
+}
+
+h2.morestaff{
+color: whitesmoke;
+text-shadow: 0 1px 0 #ccc,
+             0 6px 1px rgba(0,0,0,.1),
+             0 0 5px rgba(0,0,0,.1),
+             0 1px 3px rgba(0,0,0,.3),
+             0 3px 5px rgba(0,0,0,.2),
+             0 5px 10px rgba(0,0,0,.25),
+             0 10px 10px rgba(0,0,0,.2),
+             0 20px 20px rgba(0,0,0,.15);
+}
+
+.wrapper{
+height: -10em;
+display: flex;
+align-items: center;
+justify-content: center;
+width: fit-content;
+margin: auto;
+transform: translate(0%, -50%);
+}
+
+a.okok{
+display: block;
+width: 250px;
+height: 60px;
+line-height: 60px;
+font-size: 24px;
+font-family: sans-serif;
+text-decoration: none;
+color: #ecdfd6;
+border: 2px solid #ecdfd6;
+letter-spacing: 2px;
+text-align: center;
+transition: all .35s;
+}
+
+a.okok span{
+position: relative;
+z-index: 2;
+}
+
+a.okok:after{
+position: absolute;
+content: "";
+top: 0;
+left: 0;
+width: 0;
+height: 100%;
+background: #dc80b1;
+transition: all .35s;
+}
+
+a.okok:hover{
+color: #fff;
+}
+
+a.okok:hover:after{
+width: 100%;
+}
+
+div.getc{
+text-align: center;
+align-items: center;
+align-content: center;
+
+}
+a.names{
+color: #ecdfd6;
+}
+
+a.login{
+display: flex;
+width: fit-content;
+margin: auto;
+align-items: center;
+justify-content: center;
+font-size: small;
+color: #ecdfd6;
+}
+/*
+textarea{
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  background-color: #bdbdbd;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 1.42857143;
+  margin: 0;
+}
+*/
+
+a.getleft {
+  float: left;
+}
+
+a.getright {
+  float: right;
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid currentColor;
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  font-family: 'Quicksand-SemiBold', sans-serif;
+  font-size: 14px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: linear-gradient(0deg, #6e3d54, #442634, #1e0f14);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.menoudaki{
+  font-size:40px;
+  cursor:pointer;
+  color: whitesmoke;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-weight: bold;
+} 
+.menoudaki:hover,
+.menoudaki:focus {
+  color: #dc80b1;
+  cursor: pointer;
+}
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+input[type="radio"] {
+  /* Add if not using autoprefixer
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  
+  text-align: center;
+  font: inherit;
+  color: currentColor;
+  width: 0.80em;
+  height: 0.80em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+
+ /* display: grid;*/
+  /*place-content: center;*/
+}
+
+input[type="radio"]:checked {
+  background-color: currentColor;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  text-align: center;
+
+
+
+}
+input:checked {
+  border: 6px solid black;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.8;
+  background-color: 6e3d54;
+  font-size: small;
+  color: white;
+  text-align: center;
+}
+
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  margin-top: 10px;
+}
+
+#heart::before, #heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 80px;
+  border-radius: 50px 50px 0 0;
+  background: #dc80b1;
+}
+
+#heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/*------------------------*/
+
+#heart2 {
+position: relative;
+width: 100px;
+height: 90px;
+margin-top: 10px;
+}
+
+#heart2::before, #heart2::after {
+content: "";
+position: absolute;
+top: 0;
+width: 52px;
+height: 80px;
+border-radius: 50px 50px 0 0;
+background: #4c4345;
+}
+
+#heart2::before {
+left: 50px;
+transform: rotate(-45deg);
+transform-origin: 0 100%;
+}
+
+#heart2::after {
+left: 0;
+transform: rotate(45deg);
+transform-origin: 100% 100%;
+}
+
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+div.kartela{
+width: 40%;
+height: 80%;
+position: absolute;
+top: 10%;
+left: 30%;
+background-color: #f1f1f1;
+border-radius: 10px;
+padding: 10px;
+margin: 10px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+display: inline-block;
+text-align: center;
+font-family: 'Quicksand-SemiBold', sans-serif;
+text-align: center;
+margin-top: 10px;
+}
+
+/*------------------------*/
+.slideshow-container {
+max-width: 1000px;
+position: relative;
+margin: auto;
+}
+
+/* Next & previous buttons */
+.prev{
+cursor: pointer;
+position: absolute;
+top: 50%;
+left: 0%;
+padding: 16px;
+margin-top: -22px;
+color: whitesmoke;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+text-shadow: 2px 2px black;
+}
+.next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+left: 40;
+padding: 16px;
+margin-top: -22px;
+color: whitesmoke;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border: black;
+border-radius: 0 3px 3px 0;
+user-select: none;
+text-shadow: 2px 2px black;
+}
+
+/* Position the "next button" to the right */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+
+/* Number text (1/3 etc) */
+.numbertext {
+color: #f2f2f2;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+
+img.dogos {
+object-fit: cover;
+width: 100%;
+height: 500px;
+align-content: center;
+}
+
+.kardoylopragma{
+display: flex;
+justify-content: center;
+}
+
+.Namedog{
+display: flex;
+justify-content: space-between;
+}

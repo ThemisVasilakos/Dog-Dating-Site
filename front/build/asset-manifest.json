@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.49f6d4d6.css",
+    "main.js": "/static/js/main.dcaaa93d.js",
+    "static/media/pugmelogopng.png": "/static/media/pugmelogopng.e7081d718cbaaf571ae2.png",
+    "static/media/pugmehorisontal.png": "/static/media/pugmehorisontal.09b99cc17113d14b4cdf.png",
+    "index.html": "/index.html",
+    "main.49f6d4d6.css.map": "/static/css/main.49f6d4d6.css.map",
+    "main.dcaaa93d.js.map": "/static/js/main.dcaaa93d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49f6d4d6.css",
+    "static/js/main.dcaaa93d.js"
+  ]
+}
