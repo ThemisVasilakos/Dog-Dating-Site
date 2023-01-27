@@ -2,7 +2,7 @@
 
 ## Made by **[ThemisVasilakos](https://github.com/ThemisVasilakos)** and **[MikeTsak](https://github.com/MikeTsak)**
 
-Made for University Project
+Made for a University Project
 
 >Welcome to **PUG ME** the best dog dating site in the web, using React (front) and Java(Back)
 
