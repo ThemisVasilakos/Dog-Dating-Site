@@ -1,11 +1,12 @@
 /*Mike Tsak 19/9/22*/
 
+
 body{
   height: 100%;
   background: linear-gradient(0deg, #6e3d54, #442634, #1e0f14);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Quicksand-SemiBold', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   margin: 0;
@@ -232,6 +233,10 @@ button:hover {
   padding: 16px;
 }
 
+.container2 {
+  padding-left: 500px;
+  padding-right: 500px;
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -279,9 +284,6 @@ hr {
 
 /* The Close Button (x) */
 .close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
   font-size: 40px;
   font-weight: bold;
   color: whitesmoke;
@@ -361,65 +363,6 @@ input:checked {
   text-align: center;
 }
 
-#heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  margin-top: 10px;
-}
-
-#heart::before, #heart::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 52px;
-  height: 80px;
-  border-radius: 50px 50px 0 0;
-  background: #dc80b1;
-}
-
-#heart::before {
-  left: 50px;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-
-#heart::after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-}
-
-/*------------------------*/
-
-#heart2 {
-position: relative;
-width: 100px;
-height: 90px;
-margin-top: 10px;
-}
-
-#heart2::before, #heart2::after {
-content: "";
-position: absolute;
-top: 0;
-width: 52px;
-height: 80px;
-border-radius: 50px 50px 0 0;
-background: #4c4345;
-}
-
-#heart2::before {
-left: 50px;
-transform: rotate(-45deg);
-transform-origin: 0 100%;
-}
-
-#heart2::after {
-left: 0;
-transform: rotate(45deg);
-transform-origin: 100% 100%;
-}
 
 .sidenav {
 height: 100%;
@@ -460,9 +403,28 @@ margin-left: 50px;
 .sidenav a {font-size: 18px;}
 }
 
+div.lkartela{
+  width: 40%;
+height: 80%;
+position: absolute;
+top: 40%;
+left: 40%;
+border-radius: 10px;
+padding: 10px;
+margin: 10px;
+transition: 0.3s;
+display: inline-block;
+text-align: center;
+font-family: 'Ubuntu', sans-serif;
+text-align: center;
+margin-top: 10px;
+}
+
+
+
 div.kartela{
 width: 40%;
-height: 80%;
+height: 65%;
 position: absolute;
 top: 10%;
 left: 30%;
@@ -583,9 +545,80 @@ align-content: center;
 .kardoylopragma{
 display: flex;
 justify-content: center;
+width: 40%;
+position: absolute;
+top: 80%;
+left: 31%;
 }
+.karidia{
+  /* border: 5px solid #f1f1f1; */
+  font-size: 7em;
+}
+
 
 .Namedog{
 display: flex;
 justify-content: space-between;
+}
+
+.bone {
+  background: ghostwhite;
+  height: 40px;
+  width: 60%;
+  max-width: 300px;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+}
+
+.bone::before,
+.bone::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  background: ghostwhite;
+  box-shadow: 0 40px 0 ghostwhite;
+}
+
+.bone::before {
+  left: -15px;
+  animation: shake-left 0.4s ease-in-out infinite;
+}
+
+.bone::after {
+  right: -15px;
+  animation: shake-right 0.4s ease-in-out infinite;
+}
+
+@keyframes shake-left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake-right {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(5px) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

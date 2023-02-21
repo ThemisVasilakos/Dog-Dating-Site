@@ -21,11 +21,9 @@ export default function Join() {
                     <a className="login" onClick={navigate("/login")} href="#"><u>Already a User, Loging here and date away!</u></a>
                 </div>
 
-
-
                 <div className="footer" style={{color:"#ecdfd6"}}>
                     Made By <a className="names" href="https://github.com/ThemisVasilakos">ThemisVasilakos</a> and <a className="names" href="https://github.com/MikeTsak">MikeTsak</a>
-                </div>
+        </div>
                 </h2>
         
             </div>
