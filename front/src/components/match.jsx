@@ -29,7 +29,6 @@ export default function Match() {
     axios.get(key + "match", {
     headers: {
         'Content-Type': 'application/json',
-        'Bypass-Tunnel-Reminder': 'true',
         "Authorization": 'Bearer'+token
     }
     })

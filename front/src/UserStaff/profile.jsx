@@ -24,7 +24,6 @@ export default function Profile() {
         axios.get(key + "profile", {
         headers: {
             'Content-Type': 'application/json',
-            'Bypass-Tunnel-Reminder': 'true',
             "Authorization": 'Bearer'+token
         }
         })

@@ -1,8 +1,6 @@
-# This React app  was made by **[MikeTsak](https://github.com/MikeTsak)** as part of a University Project with  **[ThemisVasilakos](https://github.com/ThemisVasilakos)**
+# This React app  was made by @MikeTsak as part of a Uni Project with  @ThemisVasilakos
 
->Welcome to **PUG ME** the best dog dating site in the web, using React (front) and Java(Back)
-
-![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/front/src/components/img/pugmelogopng.png)
+>Welcome to PUG ME the best dog dating site in the web, using React (front) and Java(Back)
 
 
 ## Available Scripts
@@ -20,11 +18,9 @@ You may also see any lint errors in the console.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-###### More Info
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
->[University Page](http://www.ice.uniwa.gr/)
-
->App Color Palete: `#4c4345` , `#dc80b1` , `#ecdfd6` , `#886962`
-
-
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

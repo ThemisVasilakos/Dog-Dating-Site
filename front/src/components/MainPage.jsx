@@ -41,7 +41,6 @@ export default function Main() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Bypass-Tunnel-Reminder': 'true',
           "Authorization": 'Bearer'+token
         },
         body: JSON.stringify({parcel1: x}),
