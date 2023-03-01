@@ -4,7 +4,15 @@
 
 Made for a University Project
 
->Authentication is done with jwt tokens, I also uses ORM  hibernate
+##Authentication is done with jwt tokens, I also uses ORM  hibernate
+
+##Backed endpoints:
+### `pugme/login` - post
+### `pugme//register` -post
+### `pugme/home` - get
+### `pugme/match` - post/get
+### `pugme/matches` - get
+### `pugme/profile` - put/post
 
 ![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/front/src/components/img/pugmelogopng.png)
 
