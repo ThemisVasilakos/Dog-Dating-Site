@@ -4,9 +4,9 @@
 
 Made for a University Project
 
-##Authentication is done with jwt tokens, I also uses ORM  hibernate
+## Authentication is done with jwt tokens, I also uses ORM  hibernate
 
-##Backed endpoints:
+## Backed endpoints:
 ### `pugme/login` - post
 ### `pugme//register` -post
 ### `pugme/home` - get
