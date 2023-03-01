@@ -67,9 +67,14 @@ export function menoudaki(user){
             <br></br>
             <a id="about" style={meny} href="/Profile">Profile</a>
             <br></br>
-            <a id="contact" style={meny} href="/Matrches">Matrches</a>
+            <a id="contact" style={meny} href="/matches">Matches</a>
             <br></br>
-            <span onClick={ () => {user.signOut()} } className="close" style={{position:"absolute",bottom:"20px",textDecoration:"none",fontSize:"30px"}}>&#10162;</span>
+            <span onClick={ () => {    
+                var token = ''
+                localStorage.removeItem('token');
+                console.log("Token removed!")
+                window.open("login.html","_self")
+              }} className="close" style={{position:"absolute",bottom:"20px",textDecoration:"none",fontSize:"30px"}}>&#10162;</span>
         </Menu>
         </>)
 }

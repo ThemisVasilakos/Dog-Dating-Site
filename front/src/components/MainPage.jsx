@@ -5,6 +5,7 @@ import { menoudaki } from "../tools/menu";
 import axios from 'axios';
 import Popup from 'reactjs-popup';
 
+var str = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtaXMiLCJpc1VzZXIiOnRydWUsImV4cCI6MTY3NzAwMTQwNSwiaWF0IjoxNjc2OTgzNDA1fQ.Ofku6kjZPI_EZGZSiUgcWMq0KtrTXqHrK07WzMCGqlX9NLcgX-kUXC3wxByx6mUJqQtFXsjYJJNYABBy3V6kDA"
 
 var key = require("./backkey.json");
 
@@ -15,19 +16,33 @@ export default function Main() {
   const namep = user;
   const navigate = useNavigate();
 
+  if(localStorage.getItem('token')){
+    var token = JSON.parse(localStorage.getItem('token'))
+    axios.get(key + "hello",{
+      headers:{
+        "Authorization": 'Bearer'+key
+    
+    }
+    }).then((res)=>{ console.log(res.data)}).catch((err)=>{console.log(err)}) 
+    console.log('token exists')}
+    else{
+      navigate("/login")
+    }
+
+  
+
   useEffect(() => {
     if (Loading == true){getData();}
   }, []);
 
   function postData(x){
-    setLoading(true);
-    const res = fetch(key + "mutch?username=" +  Dog.username + "&liked=" + x,
+    const res = fetch(key + "match?username=" +  Dog.username + "&liked=" + x,
     { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Bypass-Tunnel-Reminder': 'true',
-          'key': 'pugme'
+          "Authorization": 'Bearer'+token
         },
         body: JSON.stringify({parcel1: x}),
         //body: JSON.stringify({parcel2: input2.value})
@@ -48,14 +63,14 @@ export default function Main() {
 
     });
   }
+ 
 
   var getData = () => {
     setLoading(true);
-    axios.get(key + "mutch/" + namep,{
+    axios.get(key + "match",{
     headers: {
       'Content-Type': 'application/json',
-      'Bypass-Tunnel-Reminder': 'true',
-      'key': 'pugme'
+      "Authorization": 'Bearer'+str
     }
     })
     .then((res)=>{
