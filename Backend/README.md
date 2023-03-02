@@ -4,7 +4,7 @@
 
 Made for a University Project
 
-## Authentication is done with jwt tokens, I also uses ORM  hibernate
+## Authentication and authorization is done with jwt tokens and hibernate as an orm tool with MySQL as the database.
 
 ## Backed endpoints:
 ### `pugme/login` - post
