@@ -89,7 +89,7 @@ public class CustomUserDetailService implements UserDetailsService {
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        newUser.setRole("ROLE_USER");
+        newUser.setRole("ROLE_USER");////setting default user
         newUser.setEmail(user.getEmail());
         newUser.setFirstName(user.getFirstName());
         newUser.setLastName(user.getLastName());
@@ -228,11 +228,11 @@ public class CustomUserDetailService implements UserDetailsService {
 
         String gender = loggedUser.getDogSex();
         String queryGender;
-        if(gender.equals("Female")){
-            queryGender="Male";
+        if(gender.equals("female")){
+            queryGender="male";
         }
         else{
-            queryGender="Female";
+            queryGender="female";
         }
 
         //Return the correct query
@@ -257,7 +257,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
         ////////
         if(users.size()==0){
-            throw new RuntimeException("No matches left");
+            return new UserDTO();
         }
         User user = users.get(new Random().nextInt(users.size()));
 
