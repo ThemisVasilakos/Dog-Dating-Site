@@ -1,11 +1,9 @@
 package net.themis.dogs.dogs.service;
 
-import net.themis.dogs.dogs.dto.MatchDTO;
 import net.themis.dogs.dogs.dto.UserDTO;
 import net.themis.dogs.dogs.exception.UserValidatorException;
 import net.themis.dogs.dogs.model.Match;
 import net.themis.dogs.dogs.model.User;
-import net.themis.dogs.dogs.repository.MatchRepository;
 import net.themis.dogs.dogs.repository.UserRepository;
 import net.themis.dogs.dogs.validator.DogeValidator;
 import net.themis.dogs.dogs.validator.UserValidator;
@@ -89,7 +87,7 @@ public class CustomUserDetailService implements UserDetailsService {
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        newUser.setRole("ROLE_USER");////setting default user
+        newUser.setRole(user.getRole());////setting default user
         newUser.setEmail(user.getEmail());
         newUser.setFirstName(user.getFirstName());
         newUser.setLastName(user.getLastName());
@@ -101,6 +99,8 @@ public class CustomUserDetailService implements UserDetailsService {
         newUser.setDogSex(user.getDogSex());
         newUser.setAge(user.getAge());
         newUser.setBreed(user.getBreed());
+        System.out.println(user.getDogPhoto());
+        newUser.setDogPhoto(user.getDogPhoto());
 
         userRepository.save(newUser);
 
@@ -125,6 +125,7 @@ public class CustomUserDetailService implements UserDetailsService {
         userDTO.setDogSex(user.getDogSex());
         userDTO.setAge(user.getAge());
         userDTO.setBreed(user.getBreed());
+        userDTO.setDogPhoto(user.getDogPhoto());
 
         return  userDTO;
     }
@@ -274,6 +275,7 @@ public class CustomUserDetailService implements UserDetailsService {
         userDTO.setDogSex(user.getDogSex());
         userDTO.setAge(user.getAge());
         userDTO.setBreed(user.getBreed());
+        userDTO.setDogPhoto(user.getDogPhoto());
 
         return userDTO;
     }
@@ -303,8 +305,11 @@ public class CustomUserDetailService implements UserDetailsService {
 
         for(int i=0;i< fromMatches.size();i++){
             String tmp = fromMatches.get(i);
+//            System.out.println(tmp);
+//           //String tmp2 = matchService.findMatchByFromAndToUsername(tmp,username);
             if(matchService.findMatchByFromAndToUsername(tmp,username).equals("yes")){
                 likeMeBackMatches.add(tmp);
+                System.out.println(tmp);
             }
         }
 
@@ -325,6 +330,7 @@ public class CustomUserDetailService implements UserDetailsService {
             userDTO.setDogSex(user.getDogSex());
             userDTO.setAge(user.getAge());
             userDTO.setBreed(user.getBreed());
+            userDTO.setDogPhoto(user.getDogPhoto());
 
             myMatchesList.add(userDTO);
         }
@@ -332,5 +338,12 @@ public class CustomUserDetailService implements UserDetailsService {
         return myMatchesList;
     }
 
+    public String getRole(){
+        UserDetails userDetailService = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = userDetailService.getUsername();
+        User user =  userRepository.findByUsername(username);
+
+        return user.getRole();
+    }
 
 }

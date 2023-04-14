@@ -3,12 +3,11 @@ package net.themis.dogs.dogs.model;
 import javax.persistence.*;
 
 @Entity
-@Table
-public class Match {
+public class Reports {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long matchId;
+    private Long reportId;
 
     @Column
     private String fromUser;
@@ -17,15 +16,19 @@ public class Match {
     private String shownUser;
 
     @Column
-    private String liked;
+    private String reported;
 
-    //Constructor
-    public Match() {
+    //Constructors
+    public Reports() {
     }
 
     //Getters and Setters
-    public Long getMatchId() {
-        return matchId;
+    public Long getReportId() {
+        return reportId;
+    }
+
+    public void setReportId(Long reportId) {
+        this.reportId = reportId;
     }
 
     public String getFromUser() {
@@ -36,21 +39,19 @@ public class Match {
         this.fromUser = fromUser;
     }
 
-    public String getShownUserId() {
+    public String getShownUser() {
         return shownUser;
     }
 
     public void setShownUser(String shownUser) {
-        this.shownUser= shownUser;
+        this.shownUser = shownUser;
     }
 
-    public String getLiked() {
-        return liked;
+    public String getReported() {
+        return reported;
     }
 
-    public void setLiked(String liked) {
-        this.liked = liked;
+    public void setReported(String reported) {
+        this.reported = reported;
     }
-
-
 }

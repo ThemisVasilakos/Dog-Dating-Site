@@ -1,11 +1,13 @@
 package net.themis.dogs.dogs.controller;
 
 import net.themis.dogs.dogs.dto.UserDTO;
+import net.themis.dogs.dogs.exception.UserValidatorException;
 import net.themis.dogs.dogs.payload.AuthenticationRequest;
 import net.themis.dogs.dogs.payload.AuthenticationResponse;
 import net.themis.dogs.dogs.service.CustomUserDetailService;
 import net.themis.dogs.dogs.service.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -49,5 +51,20 @@ public class AuthenticationController {
     @PostMapping("/register")
     public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
         return ResponseEntity.ok(userDetailService.save(user));
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<UserDTO> getProfile(){
+        return new ResponseEntity<UserDTO>(userDetailService.getProfile(), HttpStatus.OK);
+    }
+
+    @PutMapping("/profile")
+    public ResponseEntity<UserDTO> getProfile(@RequestBody UserDTO userDTO) throws UserValidatorException {
+        return new ResponseEntity<UserDTO>(userDetailService.updateProfile(userDTO), HttpStatus.OK);
+    }
+
+    @GetMapping("/role")
+    public String getRole(){
+        return userDetailService.getRole();
     }
 }

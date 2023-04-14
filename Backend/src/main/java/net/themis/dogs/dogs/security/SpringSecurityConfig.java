@@ -56,8 +56,9 @@ public class SpringSecurityConfig {
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers("/pugme/profile","/pugme/hello",
-                        "/pugme/match","pugme/matches")
+                .antMatchers("/pugme/reports").hasRole("ADMIN")
+                .antMatchers("/pugme/profile",
+                        "/pugme/match","pugme/matches","/pugme/report","/pugme/role")
                 .hasAnyRole("USER","ADMIN")
                 .antMatchers("/pugme/login","/pugme/register").permitAll().anyRequest().authenticated()
                 .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).
