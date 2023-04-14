@@ -18,6 +18,7 @@ public class UserDTO {
     private Integer age;
     private String dogBio;
     private String dogSex;
+    private String dogPhoto;
 
     public UserDTO() {
     }
@@ -116,5 +117,13 @@ public class UserDTO {
 
     public void setDogSex(String dogSex) {
         this.dogSex = dogSex;
+    }
+
+    public String getDogPhoto() {
+        return dogPhoto;
+    }
+
+    public void setDogPhoto(String dogPhoto) {
+        this.dogPhoto = dogPhoto;
     }
 }

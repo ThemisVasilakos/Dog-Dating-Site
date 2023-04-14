@@ -3,7 +3,6 @@ package net.themis.dogs.dogs.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "user",uniqueConstraints = {@UniqueConstraint( name = "username_unique", columnNames = "username")
@@ -52,7 +51,10 @@ public class User {
     @Column
     private String dogSex;
 
+    @Lob
+    private String dogPhoto;
 
+    //Getters and Setters
     public Long getId() {
         return id;
     }
@@ -153,5 +155,11 @@ public class User {
         this.dogSex = dogSex;
     }
 
+    public String getDogPhoto() {
+        return dogPhoto;
+    }
 
+    public void setDogPhoto(String dogPhoto) {
+        this.dogPhoto = dogPhoto;
+    }
 }
