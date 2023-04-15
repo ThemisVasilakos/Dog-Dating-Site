@@ -25,7 +25,7 @@ export default function Login() {
         .then((res)=>{
           var token = res.data.token
           localStorage.setItem("token",JSON.stringify(token))
-          console.log('token created')
+          getRole()
           navigate("/")
         })
         .catch((err)=>{
@@ -34,9 +34,23 @@ export default function Login() {
         })
       }
 
-      function join() {
-          navigate("../join")
-      }
+      const getRole = async(e)=>{
+      
+        let str = window.localStorage.getItem('token').replace(/["]/g,' ');
+       
+           fetch(`http://localhost:8080/pugme/role`, {
+            headers: {
+                "Authorization": 'Bearer'+str
+            },
+            method: "GET"        
+          }).then(response => response.text())
+          .then((response) => {
+            if(response === "ROLE_ADMIN"){
+                window.localStorage.setItem("role",1)
+              }
+           })
+       
+}
 
       return (
           <>

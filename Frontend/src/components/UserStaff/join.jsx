@@ -1,5 +1,4 @@
 import {useNavigate } from "react-router-dom";
-import axios from 'axios';
 import { useState } from "react";
 import { Uploader } from "uploader";
 import { UploadButton } from "react-uploader"; //https://upload.io/dashboard/files
@@ -15,8 +14,8 @@ export default function Join() {
     const [breed, setBreed] = useState(undefined);
     const [age, setAge] = useState(undefined);
     const [dogBio, setDogBio] = useState(undefined);
-    const [dogSex, setDogSex] = useState(undefined);
     const [images, setImages] = useState(undefined);
+    const [role, setRole] = useState("ROLE_USER");
 
     const navigate = useNavigate();
     const uploader = Uploader({ apiKey: "public_kW15bDiDndfa2nThQuZWRpbA7KUu" });
@@ -39,6 +38,7 @@ export default function Join() {
               password: password,
               email: email,
               phoneNumber:phoneNumber,
+              role:role,
               firstName:firstName,
               lastName:lastName,
               dogName,dogName,
@@ -46,13 +46,10 @@ export default function Join() {
               age:age,
               dogSex:UserOption,
               dogBio:dogBio,
-              images:images
+              dogPhoto:images
 
           }),
         });
-        //let resJson = await res.json();
-        //setUsername("")
-        //setPassword("")
         if (res.status === 200) {
           alert("User created")
           navigate('/login');

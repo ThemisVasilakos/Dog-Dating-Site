@@ -9,6 +9,7 @@ import Match from './components/UserStaff/match';
 import Error from "./components/sidepages/404";
 import Join from "./components/UserStaff/join";
 import Profile from "./components/UserStaff/profile";
+import Reports from "./components/UserStaff/reports";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route exact path="/matches" element={<Match />} />
       <Route exact path="/join" element={<Join />} />
       <Route exact path="/profile" element={<Profile />} />
+      <Route exact path="/reports" element={<Reports />} />
     </Routes>
   );
 };

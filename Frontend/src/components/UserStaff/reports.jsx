@@ -11,7 +11,7 @@ export default function Match() {
 
     //Use Effect for fetching matched users
     useEffect(() => {
-        axios.get(" http://localhost:8080/pugme/matches", {
+        axios.get("  http://localhost:8080/pugme/reports", {
         headers: {
             'Content-Type': 'application/json',
             "Authorization": 'Bearer'+token
@@ -24,19 +24,13 @@ export default function Match() {
             console.log(err);
         })
       }, []);
-    
-    //Function for displaying profile pic
-    function imagoavatar(x){
-        x = x.split(',')
-        return (<img height="100px" width="100px" src={x[0]}></img>)
-    }
 
-    //Check for available matches
+    //Check for available reports
     if (data.length==0){
         return (
             <>
             {menoudaki()}
-            {<div className="lkartela"><div class="bone">Keep trying💔</div></div>    }
+            {<div className="lkartela"><div class="bone">No Reports yet</div></div>    }
             <div className="footer" style={{color:"#ecdfd6"}}>
                         Made By <a className="names" href="https://github.com/ThemisVasilakos">ThemisVasilakos</a> and <a className="names" href="https://github.com/MikeTsak">MikeTsak</a>
             </div>
@@ -51,12 +45,9 @@ export default function Match() {
                 <thead >
 
                 <tr>
-                    <th scope="col">###</th>
-                    <th scope="col">Dog Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Owner's Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">Report Id</th>
+                    <th scope="col">Report From User</th>
+                    <th scope="col">Reported User</th>
                 </tr>
 
                 </thead>
@@ -64,14 +55,11 @@ export default function Match() {
 
                 <tbody>
                 {
-                    data.map(dog => (
+                    data.map(user => (
                         <tr >
-                            <th scope="row">{imagoavatar(dog.dogPhoto)}</th>
-                            <th scope="row">{dog.dogName}</th>
-                            <th>{dog.age}</th>
-                            <th>{dog.firstName}</th>
-                            <th>{dog.phoneNumber}</th>
-                            <th>{dog.email}</th>
+                            <th>{user.reportId}</th>
+                            <th>{user.fromUser}</th>
+                            <th>{user.shownUser}</th>
                         </tr>
                     ))
                 }

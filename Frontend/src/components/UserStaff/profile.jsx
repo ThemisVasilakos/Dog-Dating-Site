@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { menoudaki } from "../tools/menu";
 
 export default function User() {
-
+    //Token for user authentication
     var token = window.localStorage.getItem('token').replace(/["]/g,' ')
 
+    //User Info
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -15,16 +16,43 @@ export default function User() {
     const [breed, setBreed] = useState("");
     const [age, setAge] = useState(0);
     const [dogBio, setDogBio] = useState("");
-    const [Loading, setLoading] = useState(true);
+    const [refresh,setRefresh]=useState(0);
 
-    const navigate = useNavigate();
-
-
+    // Use Effect for displaying user info
     useEffect(() => {
-        if (Loading == true){getData();}
-      }, [Loading]);
+      fetch(`http://localhost:8080/pugme/profile`, {
+        headers: {
+            "Authorization": 'Bearer'+token,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: "GET"        
+        }).then((res) => res.json())
+        .then(page => {
+          const {
+              username,
+              email,
+              firstName,
+              lastName,
+              phoneNumber,
+              breed,
+              dogBio,
+              age,
+              dogName
+          } = page;
+          setUsername(username)
+          setEmail(email)
+          setFirstName(firstName)
+          setLastName(lastName)
+          setPhoneNumber(phoneNumber)
+          setBreed(breed)
+          setDogBio(dogBio)
+          setAge(age)
+          setDogName(dogName)
+        })
+      }, [refresh]);
 
-
+    //Submit edited form for user info  
     const postData = async(e) => {
         e.preventDefault()
         try {
@@ -49,56 +77,20 @@ export default function User() {
             });
               let resJson = await res.json();
               if (res.status === 200) {
-                
+                setRefresh(refresh+1)
               } else {
                   alert("Error")
               }
               } catch (err) {
               console.log(err);
               }
-        setLoading(true);
       }
 
-      var getData = () => {
-
-        fetch(`http://localhost:8080/pugme/profile`, {
-            headers: {
-                "Authorization": 'Bearer'+token,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "GET"        
-          }).then((res) => res.json())
-          .then(page => {
-            const {
-                username,
-                email,
-                firstName,
-                lastName,
-                phoneNumber,
-                breed,
-                dogBio,
-                age,
-                dogName
-            } = page;
-            setLoading(false)
-            setUsername(username)
-            setEmail(email)
-            setFirstName(firstName)
-            setLastName(lastName)
-            setPhoneNumber(phoneNumber)
-            setBreed(breed)
-            setDogBio(dogBio)
-            setAge(age)
-            setDogName(dogName)
-          })
-      }
-
+    //Returning edit form  
     return(
         <>
         {menoudaki()}
-        {Loading ? <div className="lkartela"><div class="bone">Loading..</div></div>  :
-        <form class="modal-content" >
+        {<form class="modal-content" >
                     <div class="container">
                       <h1>🤎Your Profile at <img src={require("../../img/pugmelogopng.png")} width="120" style={{verticalAlign: "middle"}} />❤️</h1>
                       <br></br>

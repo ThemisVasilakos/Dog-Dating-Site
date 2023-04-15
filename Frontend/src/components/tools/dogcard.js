@@ -26,7 +26,7 @@ var bio = {
 
 
 export function DogCard(name, breed, age, dogBio,images, username) {
-  console.log(dogBio)
+  
   const dog = {
     dogName: name,
     age: age,
@@ -34,27 +34,8 @@ export function DogCard(name, breed, age, dogBio,images, username) {
     dogBio: dogBio,
   }
 
-  var token = window.localStorage.getItem('token').replace(/["]/g,' ')
-
-  function postData(){
-    e.preventDefault();
-    const res = fetch(`http://localhost:8080/pugme/report?username=` +  username,
-    { 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          "Authorization": 'Bearer'+token
-        },
-        body: JSON.stringify({parcel1: "Themistokli einai kakopoios o " + username}),
-        //body: JSON.stringify({parcel2: input2.value})
-    
-    }).catch(err => console.log("Back End Error:" + err)).then(res => res.json()).then(data => {
-  
-    });
-  }
-  
-
   let urls = images.split(",");
+
 
   const slideImages = [
     {
@@ -67,7 +48,7 @@ export function DogCard(name, breed, age, dogBio,images, username) {
     {
       url: urls[2],
       caption: 'Slide 3'
-    },
+    }
   ];
 
   const Slideshow = () => {
@@ -89,21 +70,13 @@ export function DogCard(name, breed, age, dogBio,images, username) {
             <div class="slideshow-container"></div>
 
             {Slideshow()}
-            
-            <div class="Namedog"><div><h1 class="dogname">{dog.dogName}</h1></div><div class="dogname"><h1>{dog.age}<span onClick={postData}> &#9873; </span></h1></div></div>
+
             <div class="doginfo">
-                <div class="ratsa" style={ratsa}>{dog.breed}</div>
+              <br></br>
+                <div class="ratsa" style={ratsa}><b>{dog.dogName} || {dog.breed} || {dog.age}</b> </div>
+                <br></br>
                 <div class="bio" style={bio}>{dog.dogBio}</div>
             </div>
         </div>
     );
 }
-
-
-
-
-// function calculateDogAge(age) {
-//     let humanAge = 15 + (age / 3.25);
-  
-//     return (<div style={{fontSize:"15px"}}>(Age in owner years: {Math.round(humanAge)})</div>);
-//   }

@@ -56,6 +56,13 @@ var meny = {
 
 }
 
+const getReports = (e) => {
+  if(window.localStorage.getItem('role')==1){
+      return <a href={`/reports`}style={meny}>Reports</a>
+  }
+
+}
+
 
 export function menoudaki(){
     return(
@@ -69,10 +76,12 @@ export function menoudaki(){
             <br></br>
             <a id="contact" style={meny} href="/matches">Matches</a>
             <br></br>
+            {getReports()}
+            <br></br>
             <span onClick={ () => {    
                 var token = ''
                 localStorage.removeItem('token');
-                console.log("Token removed!")
+                localStorage.removeItem('role');
                 window.open("login","_self")
               }} className="close" style={{position:"absolute",bottom:"10%",textDecoration:"none",fontSize:"30px"}}>&#10162;</span>
         </Menu>
