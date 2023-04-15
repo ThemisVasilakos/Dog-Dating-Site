@@ -249,18 +249,16 @@ public class CustomUserDetailService implements UserDetailsService {
                users.add(tmp);
             }
         }
-        /*
-        for loop in ranger users
-            if users.get(i).username and loggedUsername not exist in match table
-                Query that filters all users that have not been matched yet
-                new_list.add(user)
-        * */
 
-        ////////
         if(users.size()==0){
             return new UserDTO();
         }
-        User user = users.get(new Random().nextInt(users.size()));
+
+        User user;
+        do{
+            user = users.get(new Random().nextInt(users.size()));
+        }while(user.getRole().equals("ROLE_ADMIN"));
+
 
         UserDTO userDTO = new UserDTO();
 
@@ -302,14 +300,15 @@ public class CustomUserDetailService implements UserDetailsService {
         List<String> fromMatches = matchService.findMatchByFromUsername(username);
         List<String> likeMeBackMatches = new ArrayList<>();
 
-
         for(int i=0;i< fromMatches.size();i++){
             String tmp = fromMatches.get(i);
-//            System.out.println(tmp);
-//           //String tmp2 = matchService.findMatchByFromAndToUsername(tmp,username);
-            if(matchService.findMatchByFromAndToUsername(tmp,username).equals("yes")){
-                likeMeBackMatches.add(tmp);
-                System.out.println(tmp);
+            String check = matchService.findMatchByFromAndToUsername(tmp,username);
+            if(check!=null){
+                if(check.equals("yes")){
+                    likeMeBackMatches.add(tmp);
+                    System.out.println(tmp);
+                }
+
             }
         }
 

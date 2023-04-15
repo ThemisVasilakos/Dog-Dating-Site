@@ -41,7 +41,7 @@ class CustomUserDetailServiceTest {
 
     @Test
     void myMatches() {
-        String tmp = matchService.findMatchByFromAndToUsername("magos","themis");
+        String tmp = matchService.findMatchByFromAndToUsername("rea","themis");
         System.out.println(tmp.equals("yes"));
     }
 
