@@ -14,7 +14,7 @@ Made for a University Project
 ### `pugme/matches` - get
 ### `pugme/profile` - put/post
 
-![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/front/src/components/img/pugmelogopng.png)
+![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/pugmelogopng.png)
 
 ###### More Info
 
