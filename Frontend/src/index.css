@@ -1,4 +1,4 @@
-/*Mike Tsak 19/4/23*/
+/*Mike Tsak 19/9/22*/
 
 
 body{
@@ -297,9 +297,9 @@ hr {
 }
 
 .report{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
-  color: whitesmoke;
+  color: black;
 }
 .report:hover,
 .report:focus {
@@ -659,7 +659,6 @@ justify-content: space-between;
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
-
 .tooltip {
   position: relative;
   display: inline-block;
@@ -682,7 +681,7 @@ justify-content: space-between;
   font-size: 2rem;
 }
 
-.tooltipi .tooltipitext::after {
+.tooltip .tooltiptext::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -693,25 +692,25 @@ justify-content: space-between;
   border-color: transparent transparent black transparent;
 }
 
-.tooltipi:hover .tooltipitext {
+.tooltip:hover .tooltiptext {
   visibility: visible;
 }
 
-th, td {
-  text-align: left;
-  padding: 8px 0px 0px 8px; 
+
+.matchTable {
+  background-color:#6e3d54;
+  margin: 5% auto 15% auto; 
+  border: 3px solid black;
+  padding: 0% 2% 0% 0; 
+  width: 70%; 
 }
 
-tr:nth-child(even) {
-  background-color: #acacac;
+.reportFlag{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  position: absolute;
+  top: 72%;
+  left: 51%;
 }
 
-
-table{
-  border-collapse: collapse;
-  background-color: #f5f5f5;
-  margin: 5% auto auto auto; /* 5% from the top, 15% from the bottom and centered */
-  padding-bottom: 100px;  /* Could be more or less, depending on screen size */
-  width: 80%; 
-  border-radius: 2em;
-}
