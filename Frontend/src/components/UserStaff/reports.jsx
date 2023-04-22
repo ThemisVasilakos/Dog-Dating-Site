@@ -41,7 +41,7 @@ export default function Match() {
             <>
             {menoudaki()}
             
-            <table className="matchTable">
+            <table >
                 <thead >
 
                 <tr>
@@ -65,6 +65,8 @@ export default function Match() {
                 }
 
                 </tbody>
+                <tr><th></th><th></th><th>🤎PUG ME❤️</th></tr>
+
                
             </table>
 

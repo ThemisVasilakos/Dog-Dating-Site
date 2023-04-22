@@ -21,7 +21,7 @@ var bio = {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundSize: 'cover',
-    height: '400px'
+    height: '19cm'
   }
 
 

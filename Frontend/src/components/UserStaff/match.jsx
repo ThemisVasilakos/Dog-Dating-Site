@@ -28,7 +28,11 @@ export default function Match() {
     //Function for displaying profile pic
     function imagoavatar(x){
         x = x.split(',')
-        return (<img height="100px" width="100px" src={x[0]}></img>)
+        return (<img height="100px" width="100px" src={x[0]} style={{borderRadius:"1em"}}></img>)
+    }
+
+    function hrefis(x,y){
+        return (x + y)
     }
 
     //Check for available matches
@@ -47,16 +51,16 @@ export default function Match() {
             <>
             {menoudaki()}
             
-            <table className="matchTable">
+            <table>
                 <thead >
 
                 <tr>
-                    <th scope="col">###</th>
-                    <th scope="col">Dog Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Owner's Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Email</th>
+                    <th >🐾</th>
+                    <th >Dog Name</th>
+                    <th >Age</th>
+                    <th >Owner's Name</th>
+                    <th >Phone Number</th>
+                    <th >Email</th>
                 </tr>
 
                 </thead>
@@ -65,18 +69,19 @@ export default function Match() {
                 <tbody>
                 {
                     data.map(dog => (
-                        <tr >
-                            <th scope="row">{imagoavatar(dog.dogPhoto)}</th>
-                            <th scope="row">{dog.dogName}</th>
+                        <tr>
+                            <th >{imagoavatar(dog.dogPhoto)}</th>
+                            <th >{dog.dogName}</th>
                             <th>{dog.age}</th>
                             <th>{dog.firstName}</th>
-                            <th>{dog.phoneNumber}</th>
-                            <th>{dog.email}</th>
+                            <th><a style={{textDecoration:"none",color:"black"}} href={hrefis("tel:+30",dog.phoneNumber)}>{dog.phoneNumber}</a></th>
+                            <th><a style={{textDecoration:"none",color:"black"}} href={hrefis("mailto:",dog.email)}>{dog.email}</a></th>
                         </tr>
                     ))
                 }
 
                 </tbody>
+                <tr><th></th><th></th><th></th><th></th><th></th><th>🤎PUG ME❤️</th></tr>
                
             </table>
 
