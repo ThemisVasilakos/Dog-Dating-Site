@@ -9,10 +9,11 @@ Made for a University Project
 ## Backed endpoints:
 ### `pugme/login` - post
 ### `pugme//register` -post
-### `pugme/home` - get
 ### `pugme/match` - post/get
 ### `pugme/matches` - get
-### `pugme/profile` - put/post
+### `pugme/report` - post
+### `pugme/reports` - get
+### `pugme/profile` - get/put
 
 ![Pug Me Logo](https://raw.githubusercontent.com/ThemisVasilakos/Dog-Dating-Site/main/pugmelogopng.png)
 
